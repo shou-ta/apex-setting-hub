@@ -65,4 +65,6 @@ npm run tauri build
 
 ## 権利表記
 
-Apex Legends、EAおよび関連する名称・商標はElectronic Arts Inc.または各権利者に帰属します。本アプリは非公式のコミュニティ製ツールであり、EAまたはRespawn Entertainmentによる提携・承認・推奨を受けていません。EAの[コンテンツポリシー](https://help.ea.com/en/articles/security-and-rules/ea-content-policy/)も参照してください。
+Apex Legends、EAおよび関連する名称・商標はElectronic Arts Inc.または各権利者に帰属します。
+本アプリは非公式のコミュニティ製ツールであり、EAまたはRespawn Entertainmentによる提携・承認・推奨を受けていません。
+EAの[コンテンツポリシー](https://help.ea.com/en/articles/security-and-rules/ea-content-policy/)も参照してください。
