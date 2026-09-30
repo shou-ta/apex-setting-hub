@@ -1,55 +1,44 @@
-# apex-setting-hub
+# APEX SETTING HUB
 
-Apexの起動オプションやcfgファイル（settings.cfg / videoconfig.txt）をブラウザ上でまとめて作成・編集できるツール
-すべての処理はブラウザ内で完結するため、設定ファイルが外部サーバーに送信されません
+Windows向けのApex Legends設定管理アプリです。`settings.cfg`、`profile.cfg`、`videoconfig.txt`を読み込み、設定の確認・編集・バックアップを行えます。
 
-[![GitHub stars](https://img.shields.io/github/stars/ユーザー名/リポジトリ名?style=social)](https://github.com/ユーザー名/リポジトリ名)
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow.svg)](https://buymeacoffee.com/ユーザー名)
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-orange.svg)](https://ko-fi.com/ユーザー名)
+## ダウンロード
 
+最新のインストーラーは[GitHub Releases](https://github.com/shou-ta/apex-setting-hub/releases)から取得してください。
 
-## 機能一覧・予定
+## 主な機能
 
-### 起動オプション
+- ゲームプレイ、マウス・キーボード、コントローラー、ビデオ、音声の設定を表示・編集
+- キー割り当てとFPS／FOVのキー切り替え設定
+- レティクルとレーザーサイトの色調整
+- 設定ファイルのバックアップ、プリセット、ZIP書き出し
+- 設定変更の差分確認後にゲームファイルへ適用
 
-- よく使う起動オプションの一括生成（FPS上限、DX12、-novidなど）
-- 現在使っているオプションの重複・不要コマンドチェック
+## 対象ファイル
+
+- `%USERPROFILE%\Saved Games\Respawn\Apex\local\settings.cfg`
+- `%USERPROFILE%\Saved Games\Respawn\Apex\profile\profile.cfg`
+- `%USERPROFILE%\Saved Games\Respawn\Apex\local\videoconfig.txt`
+
+標準フォルダが見つからない場合は、アプリ内の「フォルダを選択」からApexの設定フォルダを指定してください。OneDrive配下のSaved Gamesも検出します。
+
+## 適用時の注意
+
+- 設定ファイルを変更する前にバックアップを作成します。
+- 差分を確認してから適用します。
+- Apex起動中は設定の適用とバックアップの復元を行えません。
+- 手動編集された未対応の設定行は維持します。
+- 「影を消す」は`videoconfig.txt`の`setting.csm_enabled`を変更します。ゲームのアップデート後に動作が変わる可能性があります。
+
+## 開発
+
+必要な環境はNode.js、Rust MSVC toolchain、Tauri 2の[Windows前提環境](https://v2.tauri.app/start/prerequisites/)です。
+
+```powershell
+npm install
+npm run tauri dev
+npm run build
+npm run tauri build
 ```
-+reticle_color "2147483648 2147483648 2147483648"
-```
 
-
-### cfgファイル編集 (settings.cfg / videoconfig.txt)
-- ファイルをドラッグ＆ドロップして中身を直接編集
-- 影の削除（軽量化）、カスタム解像度の設定
-- ホイールジャンプ／ホイール前進の簡単バインド設定
-- ワンキー回復（バッテリー・セルの直接割り当て）の追加
-- 感度・DPIからの振り向き計算（cm表示）
-```
-bind_US_standard "F2" "fps_max 30" 0
-bind_US_standard "F3" "fps_max 60" 0
-bind_US_standard "F4" "fps_max 90" 0
-bind_US_standard "F5" "fps_max 120" 0
-bind_US_standard "F6" "fps_max 150" 0
-bind_US_standard "F7" "fps_max 180" 0
-bind_US_standard "F8" "fps_max 210" 0
-bind_US_standard "F9" "fps_max 240" 0
-bind_US_standard "F11" "cl_fovScale 1.55" 0
-bind_US_standard "F12" "cl_fovScale 1.7" 0
-```
-
-
-### プリセット・共有
-- 「軽量化」「競技向け」などの一括設定プリセット
-- 設定のURL共有、SNS用まとめ画像の書き出し
-
-## サポート・寄付
-もしこのツールが役に立ったら、GitHubの Star やサポートをいただけると励みになります！
-
-[GitHubで Star をつける](https://github.com/ユーザー名/リポジトリ名)
-[Buy Me a Coffee で支援する](https://buymeacoffee.com/ユーザー名)
-[Ko-fi で支援する](https://ko-fi.com/ユーザー名)
-
-## 免責事項・権利表記
-本ツールはファンメイドの非公式ツールです。
-『Apex Legends』およびそのロゴ、アセット等の著作権および商標権は、Electronic Arts Inc. または Respawn Entertainment に帰属します。
+テストは`npm test`および`cargo test --manifest-path src-tauri/Cargo.toml`で実行できます。
