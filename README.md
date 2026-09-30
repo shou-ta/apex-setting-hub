@@ -1,6 +1,8 @@
 # APEX SETTING HUB
 
-Apex Legendsの設定を、ファイルを直接編集せずに確認・管理するWindowsアプリです。設定変更の前後を見比べてから適用できるので、値の探し間違いや戻し忘れを減らせます。
+Apex Legendsの設定を、ファイルを直接編集せずに確認・管理するWindowsアプリです。
+設定変更の前後を見比べてから適用できるので、ミスを減らせます。
+
 
 ## このツールを使うメリット
 
@@ -9,10 +11,13 @@ Apex Legendsの設定を、ファイルを直接編集せずに確認・管理�
 - **元に戻しやすい** — 保存前の自動バックアップに加えて、手動バックアップ、プリセット、ZIP書き出しを利用できます。
 - **細かな設定も扱いやすい** — キー割り当て、スコープ感度、コントローラー感度、解像度、レティクル色などを画面から編集できます。
 - **関係ない設定を保つ** — アプリが扱わない行や手動編集された値を残して、必要な項目だけを更新します。
+- **特殊設定も簡単に反映** - 自分でファイルを編集しないと設定できない項目もアプリから簡単に反映できます。
+
 
 ## ダウンロード
 
 最新のWindowsインストーラーは[GitHub Releases](https://github.com/shou-ta/apex-setting-hub/releases)からダウンロードできます。
+
 
 ## 使い方
 
@@ -20,19 +25,30 @@ Apex Legendsの設定を、ファイルを直接編集せずに確認・管理�
 2. 設定を確認・編集します。
 3. 差分を確認してから適用します。Apex起動中は適用できません。
 
+
+## 設定の共有方法
+
+他人に自身の設定を共有する際はzipで書き出しそのファイルを共有することで簡単に共有できます
+zip内の`apply.bat`を実行することで手動でファイルを移動させることなく一瞬で設定を更新できます
+
+
+## その他
+
 設定ファイルの標準的な場所は次のとおりです。
 
-- `%USERPROFILE%\Saved Games\Respawn\Apex\local\settings.cfg`
-- `%USERPROFILE%\Saved Games\Respawn\Apex\profile\profile.cfg`
-- `%USERPROFILE%\Saved Games\Respawn\Apex\local\videoconfig.txt`
+- `C:\Users\%USERPROFILE%\Saved Games\Respawn\Apex\local\settings.cfg`
+- `C:\Users\%USERPROFILE%\Saved Games\Respawn\Apex\profile\profile.cfg`
+- `C:\Users\%USERPROFILE%\Saved Games\Respawn\Apex\local\videoconfig.txt`
 
-標準の場所が見つからない場合は、アプリの「フォルダを選択」から指定できます。OneDrive配下のSaved Gamesも検出します。
+標準の場所が見つからない場合は、アプリの「フォルダを選択」から指定できます。
+
 
 ## 注意事項
 
 - 設定を保存する前にバックアップを作成します。復元前にもApexを終了してください。
 - 「影を消す」などゲーム内にない特殊設定は、ゲームの更新で動作が変わる場合があります。
 - Apex Legendsの設定変更は自己責任で行ってください。
+
 
 ## 開発
 
