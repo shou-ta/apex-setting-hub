@@ -28,17 +28,18 @@ Apex Legendsの設定を、ファイルを直接編集せずに確認・管理�
 
 ## 設定の共有方法
 
-他人に自身の設定を共有する際はzipで書き出しそのファイルを共有することで簡単に共有できます
-zip内の`apply.bat`を実行することで手動でファイルを移動させることなく一瞬で設定を更新できます
-
+他人に自身の設定を共有する際はzipで書き出しそのファイルを共有することで簡単に共有できます。
+受け取った側はZIP全体を展開し、Apexを終了してから`apply.bat`を実行してください。
+既存の設定ファイルはバックアップ用フォルダーへ移してから新しい設定に置き換えます。
+適用前の設定は、バックアップ用フォルダーから戻せます。
 
 ## その他
 
 設定ファイルの標準的な場所は次のとおりです。
 
-- `C:\Users\%USERPROFILE%\Saved Games\Respawn\Apex\local\settings.cfg`
-- `C:\Users\%USERPROFILE%\Saved Games\Respawn\Apex\profile\profile.cfg`
-- `C:\Users\%USERPROFILE%\Saved Games\Respawn\Apex\local\videoconfig.txt`
+- `%USERPROFILE%\Saved Games\Respawn\Apex\local\settings.cfg`
+- `%USERPROFILE%\Saved Games\Respawn\Apex\profile\profile.cfg`
+- `%USERPROFILE%\Saved Games\Respawn\Apex\local\videoconfig.txt`
 
 標準の場所が見つからない場合は、アプリの「フォルダを選択」から指定できます。
 
